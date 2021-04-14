@@ -3,11 +3,16 @@ const intervalo = setInterval(() => {
   const play = document.querySelector('#vp');
   const jaTerminado = document.querySelector('.gdTkEe');
   if(play !== undefined) {
-    play.src = play.src + '&autoplay=1';
+    if(!play == null) {
+      play.src = play.src + '&autoplay=1';
+      
+    } else {
+      clearInterval(intervalo);
+    }
     if(jaTerminado == null) {
       init();
     }
-
+    
     clearInterval(intervalo);
   }
 },1000);
