@@ -2,17 +2,15 @@
 const intervalo = setInterval(() => {
   const play = document.querySelector('#vp');
   const jaTerminado = document.querySelector('.gdTkEe');
-  if(play !== undefined) {
-    if(!play == null) {
-      play.src = play.src + '&autoplay=1';
-      
-    } else {
-      clearInterval(intervalo);
-    }
+  if(play !== null) {
+    play.src = play.src + '&autoplay=1';
+  
     if(jaTerminado == null) {
       init();
     }
     
+    clearInterval(intervalo);
+  } else {
     clearInterval(intervalo);
   }
 },1000);
